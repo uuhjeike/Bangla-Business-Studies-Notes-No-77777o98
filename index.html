@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ব্যবসায় শিক্ষা — গুরুত্বপূর্ণ প্রশ্ন ও উত্তর</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --blue: #1d3768;
+    --red: #c0262d;
+    --paper: #fdfbf3;
+    --desk: #e9e4d6;
+    --rule: rgba(58, 100, 160, .24);
+    --margin-line: rgba(200, 40, 50, .65);
+    --fs: clamp(1.06rem, 1rem + .35vw, 1.22rem);
+    --lh: calc(var(--fs) * 2);
+    --margin-x: clamp(2.3rem, 8vw, 4.4rem);
+    --pad-r: clamp(.8rem, 3vw, 2.4rem);
+    --font: "Noto Serif Bengali", "Hind Siliguri", "Kalpurush", "Nirmala UI", "Vrinda", serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: var(--fs);
+    line-height: var(--lh);
+    overflow-wrap: break-word;
+    word-break: normal;
+    line-break: auto;
+    hyphens: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* reading progress */
+  .progress {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: transparent;
+    z-index: 10;
+  }
+  .progress i {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: var(--red);
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+
+  .notebook {
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* one ruled sheet */
+  .page {
+    position: relative;
+    background-color: var(--paper);
+    background-image: linear-gradient(to bottom, transparent calc(var(--lh) - 1px), var(--rule) calc(var(--lh) - 1px));
+    background-size: 100% var(--lh);
+    background-position: 0 0;
+    padding: calc(var(--lh) * 2) var(--pad-r) var(--lh) calc(var(--margin-x) + .9rem);
+    margin: 0 0 1.2rem;
+    box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 6px 18px rgba(60, 45, 20, .12);
+    isolation: isolate;
+  }
+
+  /* red margin line */
+  .page::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: var(--margin-x);
+    width: 0;
+    border-left: 1.5px solid var(--margin-line);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* subtle paper grain */
+  .page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .5;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .25  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* cover */
+  .cover { padding-bottom: calc(var(--lh) * 1); }
+  .cover h1 {
+    margin: 0;
+    font-size: calc(var(--fs) * 2);
+    line-height: calc(var(--lh) * 1.5);
+    font-weight: 700;
+    color: var(--blue);
+    border-bottom: 3px double var(--blue);
+    display: inline-block;
+    padding-right: .6em;
+  }
+  .cover .sub {
+    margin: var(--lh) 0 0;
+    font-size: calc(var(--fs) * .95);
+    color: #2b2b2b;
+  }
+
+  /* question */
+  .q {
+    margin: 0 0 var(--lh);
+    font-size: calc(var(--fs) * 1.2);
+    line-height: var(--lh);
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .qno { color: var(--red); white-space: nowrap; margin-right: .15em; }
+
+  .lbl {
+    margin: 0;
+    font-weight: 700;
+    color: var(--blue);
+  }
+
+  p { margin: 0 0 var(--lh); }
+
+  .sutorang {
+    padding: 0 .7rem;
+    margin-left: -.7rem;
+    background: rgba(70, 110, 190, .09);
+    border-left: 4px solid var(--blue);
+    font-weight: 600;
+  }
+
+  .ex .lbl { color: var(--red); }
+
+  .easy {
+    padding: 0 .7rem;
+    margin-left: -.7rem;
+    background: rgba(250, 205, 70, .22);
+    border-left: 4px dashed #b8860b;
+  }
+  .easy .lbl { color: #7a5a00; }
+  .easy p { margin-bottom: 0; }
+  .easy { margin-bottom: var(--lh); }
+
+  .pageno {
+    margin: 0;
+    text-align: center;
+    font-size: .8em;
+    color: rgba(0,0,0,.5);
+  }
+
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  @media (max-width: 600px) {
+    .notebook { max-width: none; }
+    .page { margin-bottom: .8rem; box-shadow: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  /* print */
+  @page { size: A4; margin: 12mm; }
+  @media print {
+    :root { --fs: 12pt; --lh: 24pt; --margin-x: 16mm; --pad-r: 4mm; }
+    html, body { background: #fff; }
+    .progress { display: none; }
+    .notebook { max-width: none; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      break-after: page;
+      page-break-after: always;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page:last-child { break-after: auto; page-break-after: auto; }
+    .page::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<main class="notebook">
+
+  <header class="page cover">
+    <h1>ব্যবসায় শিক্ষা</h1>
+    <p class="sub">গুরুত্বপূর্ণ প্রশ্ন ও উত্তর</p>
+  </header>
+
+  <section class="page" id="q1">
+    <h2 class="q"><span class="qno">প্রশ্ন ১।</span> ব্যবসায়ের সংজ্ঞা / ব্যবসায় কাকে বলে?</h2>
+
+    <p class="lbl">উত্তর:</p>
+    <p>মানুষের অভাব ও চাহিদা পূরণের জন্য বিভিন্ন ধরনের পণ্য ও সেবার প্রয়োজন হয়। এসব পণ্য ও সেবা উৎপাদন, ক্রয়, বিক্রয় ও বণ্টনের মাধ্যমে মানুষের অভাব পূরণ করা হয়। এসব কার্যক্রমের প্রধান উদ্দেশ্য হলো মুনাফা অর্জন করা। ব্যবসায় একটি অর্থনৈতিক কার্যক্রম, যা নিয়মিতভাবে পরিচালিত হয়। ব্যবসায়ের মাধ্যমে একদিকে মানুষের চাহিদা পূরণ হয়, অন্যদিকে ব্যবসায়ী মুনাফা অর্জন করেন।</p>
+
+    <p class="sutorang">সুতরাং, মানুষের অভাব ও চাহিদা পূরণের উদ্দেশ্যে এবং মুনাফা অর্জনের লক্ষ্যে নিয়মিতভাবে পণ্য বা সেবা উৎপাদন, ক্রয়, বিক্রয় ও বণ্টনের মাধ্যমে পরিচালিত অর্থনৈতিক কার্যক্রমকে ব্যবসায় বলে।</p>
+
+    <div class="ex">
+      <p class="lbl">উদাহরণ:</p>
+      <p>একজন ব্যবসায়ী পাইকারি বাজার থেকে চাল কিনে খুচরা বাজারে বিক্রি করেন। এর মাধ্যমে তিনি ক্রেতার চাহিদা পূরণ করেন এবং মুনাফা অর্জন করেন। এটি একটি ব্যবসায়িক কার্যক্রম।</p>
+    </div>
+
+    <p class="pageno">পৃষ্ঠা ১</p>
+  </section>
+
+  <section class="page" id="q2">
+    <h2 class="q"><span class="qno">প্রশ্ন ২।</span> শিল্প বলতে কী বোঝায়?</h2>
+
+    <p class="lbl">উত্তর:</p>
+    <p>মানুষের অভাব ও চাহিদা পূরণের জন্য বিভিন্ন ধরনের পণ্য উৎপাদন করা হয়। পণ্য উৎপাদনের জন্য প্রাকৃতিক সম্পদ, শ্রম, মূলধন ও যন্ত্রপাতি ব্যবহার করা হয়। এসব উপকরণ ব্যবহার করে কাঁচামালকে মানুষের ব্যবহার উপযোগী পণ্যে রূপান্তর করা হয়। এ ধরনের উৎপাদনমূলক কার্যক্রমকে শিল্প বলে।</p>
+
+    <p class="sutorang">সুতরাং, প্রাকৃতিক সম্পদ ও কাঁচামালকে শ্রম, মূলধন এবং যন্ত্রপাতির সাহায্যে মানুষের ব্যবহার উপযোগী পণ্য বা দ্রব্যে রূপান্তর করার কার্যক্রমকে শিল্প বলে।</p>
+
+    <div class="ex">
+      <p class="lbl">উদাহরণ:</p>
+      <p>তুলা থেকে সুতা তৈরি, সুতা থেকে কাপড় তৈরি এবং কাঁচা চামড়া থেকে জুতা তৈরি করা শিল্পের অন্তর্ভুক্ত।</p>
+    </div>
+
+    <div class="easy">
+      <p class="lbl">সহজ ভাষায়:</p>
+      <p>কাঁচামালকে বিভিন্ন উপকরণ ও যন্ত্রপাতির সাহায্যে ব্যবহার উপযোগী পণ্যে পরিণত করাকে শিল্প বলে।</p>
+    </div>
+
+    <p class="pageno">পৃষ্ঠা ২</p>
+  </section>
+
+  <section class="page" id="q3">
+    <h2 class="q"><span class="qno">প্রশ্ন ৩।</span> প্রত্যক্ষ সেবা বলতে কী বোঝায়?</h2>
+
+    <p class="lbl">উত্তর:</p>
+    <p>মানুষের বিভিন্ন অভাব ও চাহিদা পূরণের জন্য বিভিন্ন ধরনের সেবা প্রদান করা হয়। কিছু ব্যক্তি অর্থ উপার্জনের উদ্দেশ্যে নিজের জ্ঞান, দক্ষতা ও অভিজ্ঞতা ব্যবহার করে গ্রাহকদের সরাসরি সেবা প্রদান করেন। এসব সেবার মাধ্যমে গ্রাহকের প্রয়োজন পূরণ হয় এবং সেবাদানকারী অর্থ উপার্জন করেন। ডাক্তার, আইনজীবী, প্রকৌশলী প্রভৃতি পেশাজীবীরা এ ধরনের সেবা প্রদান করে থাকেন।</p>
+
+    <p class="sutorang">সুতরাং, মুনাফা অর্জনের উদ্দেশ্যে গ্রাহকদের প্রয়োজন পূরণে সমর্থ কোনো কাজ, সুবিধা বা তৃপ্তি সরাসরি প্রদান করাকে প্রত্যক্ষ সেবা বলে।</p>
+
+    <div class="ex">
+      <p class="lbl">উদাহরণ:</p>
+      <p>ডাক্তার রোগীর চিকিৎসা করেন, আইনজীবী আইনি পরামর্শ দেন এবং প্রকৌশলী বিভিন্ন নির্মাণকাজে পরামর্শ প্রদান করেন। এগুলো প্রত্যক্ষ সেবার উদাহরণ।</p>
+    </div>
+
+    <div class="easy">
+      <p class="lbl">সহজ ভাষায়:</p>
+      <p>অর্থ উপার্জনের উদ্দেশ্যে নিজের জ্ঞান ও দক্ষতা ব্যবহার করে গ্রাহকদের সরাসরি সেবা প্রদান করাকে প্রত্যক্ষ সেবা বলে।</p>
+    </div>
+
+    <p class="pageno">পৃষ্ঠা ৩</p>
+  </section>
+
+  <section class="page" id="q5">
+    <h2 class="q"><span class="qno">প্রশ্ন ৫।</span> খুচরা ব্যবসায় কাকে বলে?</h2>
+
+    <p class="lbl">উত্তর:</p>
+    <p>ব্যবসায়ের মাধ্যমে মানুষের বিভিন্ন অভাব ও চাহিদা পূরণ করা হয়। উৎপাদক বা পাইকারি ব্যবসায়ীর কাছ থেকে পণ্য ক্রয় করে তা চূড়ান্ত ভোক্তার কাছে অল্প অল্প পরিমাণে বিক্রয় করা হয়। খুচরা ব্যবসায়ী সাধারণত ভোক্তার চাহিদা অনুযায়ী বিভিন্ন ধরনের পণ্য বিক্রি করেন। এর মাধ্যমে ভোক্তা সহজেই তার প্রয়োজনীয় পণ্য সংগ্রহ করতে পারেন এবং খুচরা ব্যবসায়ী মুনাফা অর্জন করেন।</p>
+
+    <p class="sutorang">সুতরাং, যে ব্যবসায়ে পাইকার বা উৎপাদকের কাছ থেকে পণ্য ক্রয় করে চূড়ান্ত ভোক্তার কাছে ব্যবহারের জন্য অল্প অল্প পরিমাণে বিক্রয় করা হয়, তাকে খুচরা ব্যবসায় বলে।</p>
+
+    <div class="ex">
+      <p class="lbl">উদাহরণ:</p>
+      <p>মুদি দোকান, কাপড়ের দোকান, বইয়ের দোকান ও ওষুধের দোকানের মাধ্যমে চূড়ান্ত ভোক্তার কাছে পণ্য বিক্রয় করা খুচরা ব্যবসায়ের উদাহরণ।</p>
+    </div>
+
+    <div class="easy">
+      <p class="lbl">সহজ ভাষায়:</p>
+      <p>পাইকার বা উৎপাদকের কাছ থেকে পণ্য কিনে সরাসরি চূড়ান্ত ক্রেতার কাছে অল্প পরিমাণে বিক্রি করাকে খুচরা ব্যবসায় বলে।</p>
+    </div>
+
+    <p class="pageno">পৃষ্ঠা ৪</p>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    var bar = document.getElementById('bar');
+    var ticking = false;
+    function update() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? Math.min(1, Math.max(0, h.scrollTop / max)) : 0;
+      bar.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+</body>
+</html>
